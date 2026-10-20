@@ -112,6 +112,8 @@ The initial-scaffold policy selects the renderer configuration and publication m
 
 The public API returns fixed located diagnostics with the same 4>3>2>0 precedence. It never dynamically imports an API target or runs a builder. Actual Python API rendering remains with the configured native MkDocs/mkdocstrings builder.
 
+For every documented module, inspection parses its actual bounded Python source without importing it. Every public top-level function or class and every public method or property defined directly on those classes must have its own native HTML target. Private definitions and imported aliases are outside this definition inventory. A module heading and valid remaining links cannot qualify missing public targets. Changed public names need a fresh native build; invalid or unavailable source cannot inherit an older artifact. This verifies API presence and navigation, alongside the documented source contract and behavioural tests; it does not prove that prose is semantically correct.
+
 ::: check_documentation
 
 ::: documentation_html

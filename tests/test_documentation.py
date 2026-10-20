@@ -108,6 +108,83 @@ def test_actual_api_cli_make_and_normal_docs_hook(candidate: Path) -> None:
         assert actual.returncode == 0, actual.stdout + actual.stderr
 
 
+@pytest.mark.parametrize(
+    "symbol",
+    [
+        "check_repository_metadata.validate_repository_metadata",
+        "check_repository_metadata.Report",
+        "check_repository_metadata.Report.as_dict",
+    ],
+)
+def test_missing_public_api_target_refuses_despite_valid_module_links(
+    candidate: Path, symbol: str
+) -> None:
+    """Reject incomplete native API navigation even when every remaining link resolves."""
+    path = candidate / ".tool-cache/site/validation-tooling/index.html"
+    text = path.read_text()
+    assert f'id="{symbol}"' in text
+    changed = text.replace(f'id="{symbol}"', 'id="removed-public-target"').replace(
+        f'href="#{symbol}"', 'href="#check_repository_metadata"'
+    )
+    _write(path, changed)
+    code, reasons = _codes(candidate)
+    assert code == 2
+    assert "rendered_api_symbol_unavailable" in reasons
+    actual = _invoke(candidate, "--json")
+    assert actual.returncode == 2
+    assert "rendered_api_symbol_unavailable" in actual.stdout
+
+
+def test_changed_public_api_needs_a_fresh_native_documentation_build(candidate: Path) -> None:
+    """Detect a real source API rename and accept its independently rendered new target."""
+    path = candidate / "tools/check_repository_metadata.py"
+    path.write_text(
+        path.read_text().replace(
+            "def validate_repository_metadata(", "def inspect_repository_metadata(", 1
+        )
+    )
+    assert "rendered_api_symbol_unavailable" in _codes(candidate)[1]
+    built = subprocess.run(
+        ["make", "docs"],
+        cwd=candidate,
+        capture_output=True,
+        text=True,
+        timeout=30,
+        check=False,
+    )
+    assert built.returncode == 0, built.stdout + built.stderr
+    assert _codes(candidate) == (0, set())
+
+
+@pytest.mark.parametrize("contents", [b"def invalid(\n", b"\xff"])
+def test_invalid_documented_python_source_cannot_inherit_native_html(
+    candidate: Path, contents: bytes
+) -> None:
+    """Refuse actual invalid source bytes while retaining the earlier valid native artifact."""
+    (candidate / "tools/check_repository_metadata.py").write_bytes(contents)
+    code, reasons = _codes(candidate)
+    assert code == 2
+    assert {"invalid_api_source", "invalid_document_utf8"} & reasons
+
+
+def test_native_symbol_directive_does_not_replace_selected_module_policy(candidate: Path) -> None:
+    """Keep the selected module scope even when the real renderer accepts a class target."""
+    path = candidate / "docs/validation-tooling.md"
+    path.write_text(path.read_text() + "\n::: check_repository_metadata.Report\n")
+    built = subprocess.run(
+        [str(SOURCE / ".venv/bin/mkdocs"), "build", "--strict", "--clean"],
+        cwd=candidate,
+        capture_output=True,
+        text=True,
+        timeout=30,
+        check=False,
+    )
+    assert built.returncode == 0, built.stdout + built.stderr
+    code, reasons = _codes(candidate)
+    assert code == 2
+    assert "api_reference_unavailable" in reasons
+
+
 def test_real_renderer_failure_stops_make_before_final_inspection(candidate: Path) -> None:
     """Use a genuinely unresolved native API reference, not a fake failing executable."""
     path = candidate / "docs/validation-tooling.md"

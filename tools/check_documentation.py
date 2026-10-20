@@ -10,6 +10,7 @@
 from __future__ import annotations
 
 import argparse
+import ast
 import json
 import os
 import re
@@ -94,6 +95,31 @@ def _decode(root: Path, name: str) -> str | DocumentationIssue:
         return raw.decode("utf-8")
     except UnicodeError:
         return DocumentationIssue(name, "invalid_document_utf8")
+
+
+def _api_anchors(root: Path, module: str) -> frozenset[str] | DocumentationIssue:
+    name = "tools/" + module + ".py"
+    source = _decode(root, name)
+    if isinstance(source, DocumentationIssue):
+        return source
+    try:
+        tree = ast.parse(source)
+    except (SyntaxError, ValueError, RecursionError):
+        return DocumentationIssue(name, "invalid_api_source")
+    symbols: set[str] = set()
+    definitions = (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef)
+    for node in tree.body:
+        if isinstance(node, definitions) and not node.name.startswith("_"):
+            qualified = module + "." + node.name
+            symbols.add(qualified)
+            if isinstance(node, ast.ClassDef):
+                symbols.update(
+                    qualified + "." + method.name
+                    for method in node.body
+                    if isinstance(method, (ast.FunctionDef, ast.AsyncFunctionDef))
+                    and not method.name.startswith("_")
+                )
+    return frozenset(symbols)
 
 
 def _link_issues(
@@ -279,6 +305,12 @@ def validate_documentation(root: Path) -> DocumentationReport:
                 module = fragment.removeprefix(":::").strip()
                 if module not in built.anchors:
                     reasons.append(DocumentationIssue(name, "rendered_api_unavailable"))
+                elif module in API_MODULES:
+                    expected = _api_anchors(root, module)
+                    if isinstance(expected, DocumentationIssue):
+                        reasons.append(expected)
+                    elif not expected <= built.anchors:
+                        reasons.append(DocumentationIssue(name, "rendered_api_symbol_unavailable"))
             elif fragment not in built.visible_text:
                 reasons.append(DocumentationIssue(name, "rendered_text_differs"))
     for name, doc in html.items():
