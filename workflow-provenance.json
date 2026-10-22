@@ -75,9 +75,9 @@
     "archive_downloaded_or_executed": false
   },
   "uv_archive": {
-    "version": "0.12.22",
-    "bytes": 19916278,
-    "github_release_digest": "sha256:b9980552309f09c15172b8be828555e375097f16deb459795ce7bfd200380f0b"
+    "version": "0.13.4",
+    "bytes": 16653835,
+    "github_release_digest": "sha256:2b428396f12572d4429cf210ca234dd599a33b3af0958a4d5ed569d63e3f344f"
   },
   "scorecard_image": {
     "source_commit": "fa7117db83c52d787ae5a89f350999701505d78e",
@@ -90,18 +90,26 @@
     "image_executed": false
   },
   "python_manifest": {
+    "source": "https://github.com/astral-sh/uv/blob/7456b60bc6bc348e13e06e3691bf08e78d3aef54/crates/uv-python-managed/download-metadata.json",
+    "bytes": 3476560,
+    "sha256": "8944c7c672f6b2cab3d03305a06daec71babe491cd77ec4c0bbf4a0f6d286c18",
+    "selected_python": "3.13.16",
+    "selected_linux_x86_64_sha256": "d0080766b6b74aeb81e1949ef0d9a20e6c17f7b160fb295a69b936ccb17660be"
+  },
+  "residuals": [
+    "Hosted ubuntu-24.04 image and runner service are maintained externally; no hosted run is qualified.",
+    "Official setup-uv action uses service/cache resolution; exact release checksum and package locks remain mandatory.",
+    "CodeQL and Scorecard service settings and real hosted executions remain unqualified.",
+    "Local CPython 3.13.16 uses the separately recorded original source observation. Updated uv selects a newer standalone build of that same version for a fresh bootstrap; neither runtime byte equivalence nor hosted execution is qualified."
+  ],
+  "workflow_definitions_prepared": true,
+  "complete_pipeline_wiring_qualified": false,
+  "hosted_run_qualified": false,
+  "local_python_source_observation": {
     "source": "https://github.com/astral-sh/uv/blob/0.12.22/crates/uv-python/download-metadata.json",
     "bytes": 3333232,
     "sha256": "264e857a56e5f057f313c5ca49714706ab06142941ffd90cca1062c678d3288a",
     "selected_python": "3.13.16",
     "selected_linux_x86_64_sha256": "ffcb50e716789d1a6e1db5e745d4d194ac8ed9b015ccf5eabcaccb179a25e4a8"
-  },
-  "residuals": [
-    "Hosted ubuntu-24.04 image and runner service are maintained externally; no hosted run is qualified.",
-    "Official setup-uv action uses service/cache resolution; exact release checksum and package locks remain mandatory.",
-    "CodeQL and Scorecard service settings and real hosted executions remain unqualified."
-  ],
-  "workflow_definitions_prepared": true,
-  "complete_pipeline_wiring_qualified": false,
-  "hosted_run_qualified": false
+  }
 }

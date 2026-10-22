@@ -12,5 +12,7 @@ SPIKE-ENCODER-CHARACTERISER — repository foundation
 
 ## [Unreleased]
 
+- Align the development lock and six workflow bootstraps with uv 0.13.4, certifi 2026.10.19 and virtualenv 21.14.9. Keep the existing local Python build distinct from the newer build selected during a fresh bootstrap.
+
 - Add repository validation tools, dedicated tests, native policy rendering and workflow definitions for qualification.
 - Define source-owned encoder, continuous-stimulus and complete-grid boundaries without implementing or qualifying a characterisation runtime.
