@@ -252,7 +252,7 @@
         {
           "requirement": "filelock>=3.8.0 ; extra == 'filecache'",
           "selected_name": "filelock",
-          "selected_version": "4.0.9"
+          "selected_version": "4.2.1"
         }
       ],
       "active_extras": [
@@ -678,8 +678,8 @@
     {
       "active_dependencies": [],
       "active_extras": [],
-      "installed_metadata_path": "filelock-4.0.9.dist-info/METADATA",
-      "installed_metadata_sha256": "84f4d3bd3932b67c48b4e182fece56cbc837afcb68fcb3b49e26573bfa03df02",
+      "installed_metadata_path": "filelock-4.2.1.dist-info/METADATA",
+      "installed_metadata_sha256": "bfaf7126025d4e55327f6d9497b754e469b5ce54224d46e6118150dd13598037",
       "licence_classifiers": [
         "License :: OSI Approved :: MIT License"
       ],
@@ -688,17 +688,17 @@
       "name": "filelock",
       "purpose": "Required by the selected active development graph.",
       "requires_dist": [],
-      "requires_python": ">=3.10",
+      "requires_python": ">=3.11",
       "role": "transitive",
       "source_artifact": {
-        "bytes": 110368,
-        "filename": "filelock-4.0.9-py3-none-any.whl",
+        "bytes": 162455,
+        "filename": "filelock-4.2.1-py3-none-any.whl",
         "kind": "bdist_wheel",
-        "sha256": "9287fd61b99a806e5202be29a83034c0808a1b9830e820537c2f5773981f7eeb",
-        "url": "https://files.pythonhosted.org/packages/01/4f/83454fafd628e1e7e1726d74e44fb2332be5969d04c6182ca1fecb6c580e/filelock-4.0.9-py3-none-any.whl"
+        "sha256": "7be2662e9e826b9bba28afc0f843a123280d799a2ea44bb5d35ccec67905ae44",
+        "url": "https://files.pythonhosted.org/packages/28/00/db89d339bc4ecdc8087fa7b8607ba22ffc27bf96286f340c9620bea428b3/filelock-4.2.1-py3-none-any.whl"
       },
-      "source_metadata_observation_sha256": "f7cc5209556e33750e84ab6a7073aada326bfdfa1f857c5c029e173f94a1f2c4",
-      "version": "4.0.9"
+      "source_metadata_observation_sha256": "35f3d4d479b6474707865374ac05f198ed4cd1befe968703262e4729a28bce85",
+      "version": "4.2.1"
     },
     {
       "active_dependencies": [],
@@ -2383,7 +2383,7 @@
         {
           "requirement": "virtualenv>=20.10.0",
           "selected_name": "virtualenv",
-          "selected_version": "21.14.9"
+          "selected_version": "21.14.10"
         }
       ],
       "active_extras": [],
@@ -2750,7 +2750,7 @@
         {
           "requirement": "filelock>=3.15.4",
           "selected_name": "filelock",
-          "selected_version": "4.0.9"
+          "selected_version": "4.2.1"
         }
       ],
       "active_extras": [],
@@ -3582,7 +3582,7 @@
         {
           "requirement": "filelock<5,>=3.24.2; python_version >= '3.10'",
           "selected_name": "filelock",
-          "selected_version": "4.0.9"
+          "selected_version": "4.2.1"
         },
         {
           "requirement": "packaging>=26.3",
@@ -3601,8 +3601,8 @@
         }
       ],
       "active_extras": [],
-      "installed_metadata_path": "virtualenv-21.14.9.dist-info/METADATA",
-      "installed_metadata_sha256": "6963973437357ade01e57a4a459fac86e9acb7d3a59de476a5bbc311e3a81903",
+      "installed_metadata_path": "virtualenv-21.14.10.dist-info/METADATA",
+      "installed_metadata_sha256": "7c4b48b8b8fbdd6c78d456272a17dc2a1c25f3af610e37b1149093404ac341a6",
       "licence_classifiers": [
         "License :: OSI Approved :: MIT License"
       ],
@@ -3622,14 +3622,14 @@
       "requires_python": ">=3.9",
       "role": "transitive",
       "source_artifact": {
-        "bytes": 5494452,
-        "filename": "virtualenv-21.14.9-py3-none-any.whl",
+        "bytes": 5494519,
+        "filename": "virtualenv-21.14.10-py3-none-any.whl",
         "kind": "bdist_wheel",
-        "sha256": "ac51744da66ae56ff814b087d65096c94de698ec520adc624b108b679655809b",
-        "url": "https://files.pythonhosted.org/packages/64/e5/9a3918219745e8bdd64fe0fd9a2d7ce4fffde9268fbc791634b7d4779de9/virtualenv-21.14.9-py3-none-any.whl"
+        "sha256": "bf4a0f9671731d097e017e41280aa05e1e1adcd536b0e804fceb3179947ad50e",
+        "url": "https://files.pythonhosted.org/packages/1f/83/6fb5c79de3fe1f174c5c7f0f7bb79e3fd7a464b14871f7abfdb66dd10396/virtualenv-21.14.10-py3-none-any.whl"
       },
-      "source_metadata_observation_sha256": "924454e173bfd4a5bb6798de175bed883b3b663be5e33ce43088dbe85ba8ac50",
-      "version": "21.14.9"
+      "source_metadata_observation_sha256": "753020d873f55e47f59d7d1583252c8300849e677a3f2027f6d340842545b155",
+      "version": "21.14.10"
     },
     {
       "active_dependencies": [],
@@ -3746,7 +3746,7 @@
       "native-tool-provenance.json": "adbc399b8fd504cceabc0ef564339485adf201a02a58195a4a7a5536ebfa13df",
       "pyproject.toml": "0094def76bae28778f9f3f193bcfe1cf5a394b8898180db31df509c412958a48",
       "requirements-dev.in": "b3103b865fb6fffdb93edf0af8abb1edebff2a30d317ef2feede582ecf648825",
-      "requirements-dev.txt": "da89a300726b53b370ad9fb5c9af299491f3204b94179b92d52961216b878395",
+      "requirements-dev.txt": "c35f1154ac1805f7808f1a0e236cd36351e1ee820b51d4cecbc25b0c2c980fa7",
       "requirements-rejection.in": "e73011c35abb914796aef109a7f87bb32b93443a7885903889f67afc3355a78b",
       "requirements-rejection.txt": "eda3dade497c587d15474a1ba7b58290eaeb129da3368c4e85c0e8ca8b7817c4",
       "workflow-provenance.json": "1cba1c2fb77429f4126c83ce431c93781b3224add511dc13e0400081aaf89626"
@@ -3771,7 +3771,7 @@
       "defusedxml-0.7.1.dist-info/METADATA": "369d3cef64870daf849fba711cb8d05a7efe3c8d9ab0f763adc34079fe378bb1",
       "distlib-0.4.3.dist-info/METADATA": "6c988f8c23faa0ef8734f6863b32976d65f5851333161e8a8df3d80fc57e080d",
       "execnet-2.1.2.dist-info/METADATA": "7343015d62b2eaa1841ec06a7c7c132aeb482921f73ab6e0fd18331495684c61",
-      "filelock-4.0.9.dist-info/METADATA": "84f4d3bd3932b67c48b4e182fece56cbc837afcb68fcb3b49e26573bfa03df02",
+      "filelock-4.2.1.dist-info/METADATA": "bfaf7126025d4e55327f6d9497b754e469b5ce54224d46e6118150dd13598037",
       "fqdn-1.6.0.dist-info/METADATA": "3baa3c9f310023b1ea28d08f35a2179ca4dd624149902d0e0dbdd68dcac58db0",
       "ghp_import-2.1.0.dist-info/METADATA": "3c2ad89834c9d978c8b94918337dddd6df05bdaf79486d94a61bcdfadf5beb2f",
       "griffelib-2.3.0.dist-info/METADATA": "66d575ce43e8872523e16f662dbf8c626cfb213485cbe1d7cfeb53f8ccffa7f4",
@@ -3851,7 +3851,7 @@
       "uri_template-1.3.0.dist-info/METADATA": "3a8c53a915e5755c13b09faa29a4211fcff0c6ee188a169fc02cc092d89f46bc",
       "urllib3-2.8.0.dist-info/METADATA": "10898c620e8007c030e07fa5622b68358a43010025dfbd78a1cb797699de2bb4",
       "uv-0.13.4.dist-info/METADATA": "00b8c59f203e332092ec679c6f58bb07ccb90732d6b464304032afb1f24079e5",
-      "virtualenv-21.14.9.dist-info/METADATA": "6963973437357ade01e57a4a459fac86e9acb7d3a59de476a5bbc311e3a81903",
+      "virtualenv-21.14.10.dist-info/METADATA": "7c4b48b8b8fbdd6c78d456272a17dc2a1c25f3af610e37b1149093404ac341a6",
       "watchdog-6.0.0.dist-info/METADATA": "ecfde023047e7761dce06d4488abcede89e398399961a052f2fccb39b001e279",
       "webcolors-25.10.0.dist-info/METADATA": "53b0da874b2e90dd8f1ccaa9c75c41e8db9107eb2568fc7a4e605b71c955d099",
       "zizmor-1.30.1.dist-info/METADATA": "0bbcc2eb51ce690a1f2df9a697409713d72276d43870ea2563a595c31de8ca0e"
