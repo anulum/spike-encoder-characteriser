@@ -12,6 +12,8 @@ SPIKE-ENCODER-CHARACTERISER — repository foundation
 
 Spike Encoder Characteriser is being built to measure reconstruction quality, spike cost and latency for source-pinned sensor-to-spike encoders. This checkout contains repository validation tooling and documentation. Full foundation qualification is in progress. There is no installed characterisation package, executable encoder runner, public characterisation command or measured characterisation result.
 
+Spike Encoder Characteriser is part of the **SC Neuromorphic Computing Systems** group (SC-NEUROMORPHIC-COMPUTING-SYSTEMS). The [group and project map](https://github.com/anulum/sc-neurocore/blob/main/docs/ecosystem.md) shows the whole programme and where this repository sits in it.
+
 ## Boundary
 
 SC-NeuroCore owns encoder implementations. This project owns the planned continuous-stimulus registry, explicit adapters, complete grid runner, independent reconstruction and single-task-probe metrics, and comparable clouds and Pareto reports. Shared evidence operations belong to the separately installed Evidence Manifest Toolkit. Optional vendor conversion belongs to Spike Format Bridge.

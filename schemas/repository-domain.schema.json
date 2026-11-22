@@ -18,7 +18,7 @@
       "const": "architecture_only"
     },
     "lifecycle": {
-      "const": "local_scaffold"
+      "const": "public_repository"
     },
     "owner_group": {
       "const": "SC-NEUROMORPHIC-COMPUTING-SYSTEMS"
@@ -27,6 +27,9 @@
       "const": [
         "encoder_characterisation.result.v1"
       ]
+    },
+    "public_remote": {
+      "const": "https://github.com/anulum/spike-encoder-characteriser"
     },
     "qualified_owned_schema_ids": {
       "maxItems": 0,
@@ -92,6 +95,7 @@
     "lifecycle",
     "owner_group",
     "planned_owned_schema_ids",
+    "public_remote",
     "qualified_owned_schema_ids",
     "repository_name",
     "tooling_python",

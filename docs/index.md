@@ -12,6 +12,8 @@ SPIKE-ENCODER-CHARACTERISER — repository foundation
 
 This repository is preparing a measurement tool for sensor-to-spike encoders. Its current executable surface is repository validation tooling. It has no installed characterisation package, public characterisation runner or qualified encoder/physical result.
 
+Spike Encoder Characteriser is part of the **SC Neuromorphic Computing Systems** group (SC-NEUROMORPHIC-COMPUTING-SYSTEMS). The [group and project map](https://github.com/anulum/sc-neurocore/blob/main/docs/ecosystem.md) shows the whole programme and where this repository sits in it.
+
 The planned workflow binds complete continuous records, actual source functions, explicit parameter grids and independent analysis before execution. It preserves failed/inconclusive cells, missing-record status and actual censoring. Model-time rasters are distinct from physical acquisition.
 
 Read [Architecture](ARCHITECTURE.md), [validation tooling](validation-tooling.md), [data boundaries](THREAT_MODEL.md) and the [repository boundary decision](adr/0001-repository-boundary.md).

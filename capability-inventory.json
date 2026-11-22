@@ -2,11 +2,11 @@
   "capabilities": [],
   "claims": [],
   "evidence_maturity": "architecture_only",
-  "lifecycle": "local_scaffold",
+  "lifecycle": "public_repository",
   "qualified_owned_schema_ids": [],
   "repository_name": "SPIKE-ENCODER-CHARACTERISER",
   "source_metadata": {
     "path": "repository-domain.json",
-    "sha256": "b2d94000c00fbd326dde3efc22c458fbd5a56520a92854f8f2e132a4fbd7d002"
+    "sha256": "fda86f4c1c6b17e66b43bb0608bd0b514e834b2e3c3676aca1a97cdcfca60e4b"
   }
 }
