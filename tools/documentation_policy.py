@@ -18,7 +18,7 @@ from pathlib import Path
 
 MAX_BYTES = 2_097_152
 SELECTED_INPUTS = {
-    "mkdocs.yml": "086f4bc3450e2a45bb78d08f647c44b7bdd5232900a127bcb6dfe750932314d5",
+    "mkdocs.yml": "520832563ca56392c177fa512d6fa0bf42a605264e63c067590fc30ebc88036a",
     "tools/documentation_hooks.py": "bade5e91200ed810553ecd7ebe555dd3e3ddb4a804db30e0b6bd24573ea09dca",
     "CITATION.cff": "8f075ee0b80544e296400f2a29d79f4459ebc5da7a1bfb86eef1de75202092e5",
     ".zenodo.json": "fd3cae135d55d8433bdef91b847d073ee35aa731c12bf8d2cbce9f389353c4d6",
